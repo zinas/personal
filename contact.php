@@ -1,13 +1,13 @@
 <?php
 
-    $site_owners_email = 'example@example.com'; // Replace this with your own email address
-    $site_owners_name = 'Example'; // replace with your name
+    $site_owners_email = 'zinas.nikos@gmail.com'; // Replace this with your own email address
+    $site_owners_name = 'Nikos Zinas'; // replace with your name
 
     $name = filter_var($_POST['contactName'], FILTER_SANITIZE_STRING);
     $email = filter_var($_POST['contactEmail'], FILTER_SANITIZE_EMAIL);
     $subject = filter_var($_POST['contactSubject'], FILTER_SANITIZE_STRING);
     $message = filter_var($_POST['contactMessage'], FILTER_SANITIZE_STRING);
-    
+
     $error = "";
 
     if (strlen($name) < 2) {
@@ -34,11 +34,11 @@
         $mail->From = $email;
         $mail->FromName = $name;
         $mail->Subject = $subject;
-        
+
         $mail->AddAddress($site_owners_email, $site_owners_name);
-        
+
         $mail->IsHTML(true);
-        
+
         $mail->Body = '<b>Sender Name:</b> '. $name .'<br/><b>Sender Email:</b> '. $email .'<br/><br/>' . $message;
 
         $mail->Send();
