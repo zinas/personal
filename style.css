@@ -238,7 +238,7 @@ p:last-child {
 }
 
 /* 1.5. BUTTONS */
-.btn--default, .btn--primary {
+.btn--default, .btn--primary, .btn--secondary {
 		display: inline-block;
 		padding: 16px 30px 15px 29px;
 		color: #fff;
@@ -271,6 +271,12 @@ p:last-child {
 .btn--primary {
 		border-color: #303030;
 		background-color: #303030;
+}
+
+.btn--secondary {
+	border-color: #fff;
+	background-color: #fff;
+	color: #303030;
 }
 
 /* 1.6. DATEPICKER */
