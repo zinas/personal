@@ -553,8 +553,12 @@ body.scrolled .header--navbar {
 .header--nav .nav li a {
 		position: relative;
 		padding: 15px 0 10px;
-		color: #303030;
+		color: #fff;
 		outline: 0;
+}
+
+.scrolled .header--nav .nav li a {
+	color: #303030;
 }
 
 .header--nav .nav li a:hover,
@@ -570,9 +574,13 @@ body.scrolled .header--navbar {
 		bottom: 20px;
 		width: 0;
 		height: 1px;
-		background-color: #303030;
+		background-color: #fff;
 		-webkit-transition: width .25s ease-in-out;
 						transition: width .25s ease-in-out;
+}
+
+.scrolled .header--nav .nav li a:before {
+	background-color: #303030;
 }
 
 .header--nav .nav li a:hover:before,
@@ -589,7 +597,15 @@ body.scrolled .header--navbar {
 .header--custom-btn .btn--default {
 		margin-top: 2px;
 		padding: 10px 15px;
+		color: #fff;
+		border-color: #fff;
 }
+
+.scrolled .header--custom-btn .btn--default {
+		color: #303030;
+		border-color: #303030;
+}
+
 
 /*------------------------------------*\
 		3. BANNER AREA
