@@ -123,14 +123,17 @@ p:last-child {
 /* 1.1. LOGO */
 .logo {
 		display: inline-block;
-		color: #303030;
+		color: #fff;
 }
 
 .logo:hover,
 .logo:focus {
-		color: #303030;
 		text-decoration: none;
 		outline: 0;
+}
+
+.scrolled .logo {
+	color: #303030;
 }
 
 .logo--img,
