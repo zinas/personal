@@ -533,14 +533,16 @@ body.scrolled .header--navbar {
 
 /* 2.2. HEADER NAVBAR TOGGLE BUTTON */
 .header--navbar .navbar-toggle {
-		border-color: #303030;
+		border-color: #fff;
 		border-radius: 0;
 }
-
+.scrolled .header--navbar .navbar-toggle { border-color: #303030; }
 .header--navbar .navbar-toggle .icon-bar {
-		background-color: #303030;
+		background-color: #fff;
 }
-
+.scrolled .header--navbar .navbar-toggle .icon-bar {
+	background-color: #303030;
+}
 /* 2.3. HEADER NAVBAR BRAND */
 .header--navbar .navbar-brand {
 		height: auto;
@@ -1893,6 +1895,11 @@ body.scrolled #backToTop {
 
 		.header--nav .nav > li > a {
 				display: inline-block;
+				color: #303030;
+		}
+
+		.header--nav .nav li a:before {
+			background-color: #303030;
 		}
 
 		/* BANNER */
@@ -1986,6 +1993,10 @@ body.scrolled #backToTop {
 		/* SUBSCRIBE AREA */
 		.subscribe--form .input-box {
 				width: 100%;
+		}
+
+		.banner--content {
+			width: 90%;
 		}
 }
 
