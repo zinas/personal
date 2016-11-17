@@ -652,6 +652,14 @@ body.scrolled .header--navbar {
 		outline: 0;
 }
 
+.banner--content .btn--label {
+	font-size: 20px;
+}
+
+.banner--content .btn--label + .btn--default {
+	margin-top: 5px;
+}
+
 .banner--content .btn--default {
 		margin-top: 22px;
 		color: #fff;
