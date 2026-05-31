@@ -1419,7 +1419,6 @@ body.scrolled .header--navbar {
 		11. CONTACT AREA
 \*------------------------------------*/
 #contact {
-		position: relative;
 		padding: 80px 0;
 		background-color: #fff;
 		border-style: solid;
@@ -1427,47 +1426,50 @@ body.scrolled .header--navbar {
 		border-color: #e9e9e9;
 }
 
-#contact:before {
-		content: " ";
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 50%;
-		height: 100%;
-		background-color: #f8f8f8;
-		border-left: 1px solid #e9e9e9;
+/* 11.1. CONTACT CTA */
+.contact--cta {
+		max-width: 640px;
+		margin: 0 auto;
 }
 
-/* 11.1. CONTACT ADDRESS */
-.contact--address h2 {
-		position: relative;
-		margin: 0 0 30px;
+.contact--lead {
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 36px;
+}
+
+.contact--cta .btn--default {
+		padding: 12px 50px;
+}
+
+.contact--quote {
+		margin: 40px auto 0;
+		padding: 0;
+		border: 0;
+		max-width: 480px;
+}
+
+.contact--quote p {
+		font-size: 20px;
+		font-style: italic;
+		line-height: 30px;
+		color: #303030;
+		margin-bottom: 8px;
+}
+
+.contact--quote cite {
+		display: block;
+		font-size: 14px;
+		font-style: normal;
 		font-weight: 700;
-		padding-bottom: 21px;
-		font-size: 26px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: #737373;
 }
 
-.contact--address h2:before,
-.contact--address h2:after {
-		content: " ";
-		position: absolute;
-		left: 0;
-}
-
-.contact--address h2:before {
-		bottom: 0;
-		width: 100px;
-		padding: 4px 0 5px;
-		border-style: solid;
-		border-width: 1px 0;
-		border-color: #737373;
-}
-
-.contact--address h2:after {
-		bottom: 5px;
-		width: 200px;
-		height: 1px;
-		background-color: #303030;
+/* 11.2. CONTACT ADDRESS */
+.contact--address {
+		margin-top: 48px;
 }
 
 .contact--address address {
@@ -1475,7 +1477,14 @@ body.scrolled .header--navbar {
 }
 
 .contact--address address p {
-		margin-bottom: 30px;
+		display: inline-block;
+		margin: 0 18px;
+}
+
+.contact--address address p a {
+		color: #303030;
+		font-weight: 700;
+		text-decoration: none;
 }
 
 .contact--address address p:last-child {
@@ -1526,36 +1535,6 @@ body.scrolled .header--navbar {
 		color: #fff;
 		border: 1px solid #303030;
 		background: #303030;
-}
-
-/* 11.3. CONTACT SOCIAL */
-.contact--form {
-		padding-left: 50px;
-}
-
-.contact-form-status .alert {
-		border-radius: 0;
-}
-
-.contact--form form label {
-		margin-top: 5px;
-		margin-bottom: 0;
-		font-style: italic;
-		font-weight: 400;
-}
-
-.contact--form form input.form-control {
-		border-color: #e9e9e9;
-		border-radius: 0;
-		box-shadow: none;
-}
-
-.contact--form form textarea.form-control {
-		border-color: #e9e9e9;
-		border-radius: 0;
-		box-shadow: none;
-		resize: none;
-		margin-top: 15px;
 }
 
 /*------------------------------------*\
@@ -1968,15 +1947,6 @@ body.scrolled #backToTop {
 				margin-bottom: 5px;
 		}
 
-		/* CONTACT AREA */
-		#contact:before {
-				display: none;
-		}
-
-		.contact--form {
-				padding-top: 30px;
-				padding-left: 0;
-		}
 }
 
 @media screen and (max-width: 480px) {
