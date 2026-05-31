@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Skills section — variations</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700,800" rel="stylesheet">
+
+	<style>
+		/* ============================================================
+		   SHARED TOKENS (mirrors the site: Raleway, #303030 on #f9f9f9)
+		   ============================================================ */
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			padding: 0;
+			background: #f9f9f9;
+			color: #303030;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 300;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		/* page chrome just for this preview — not part of the component */
+		.preview-bar {
+			background: #303030;
+			color: #fff;
+			text-align: center;
+			padding: 14px 20px;
+			font-size: 12px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+
+		.preview-label {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 60px 30px 0;
+			font-size: 12px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			font-weight: 700;
+			color: #aaa;
+		}
+
+		/* the site's section title treatment, reused so headings match */
+		.section--title {
+			margin-bottom: 50px;
+			text-align: center;
+		}
+
+		.section--title h2 {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding-bottom: 18px;
+			font-size: 36px;
+			line-height: 41px;
+			font-weight: 800;
+			letter-spacing: 1px;
+		}
+
+		.section--title h2 strong { font-weight: 800; }
+		.section--title h2 span { font-weight: 300; }
+
+		.section--title h2:before,
+		.section--title h2:after {
+			content: " ";
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.section--title h2:before {
+			bottom: 0;
+			width: 60px;
+			height: 2px;
+			background-color: #303030;
+		}
+
+		.section--title h2:after {
+			bottom: 6px;
+			width: 120px;
+			height: 1px;
+			background-color: #303030;
+		}
+
+		.skills-section {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 70px 30px;
+		}
+
+		/* ============================================================
+		   VARIATION A — TWO COLUMNS, LEADERSHIP WEIGHTED
+		   Side by side. LEADING is the dark/filled, large-type column;
+		   HANDS-ON is light, secondary, smaller.
+		   ============================================================ */
+		.varA-grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0;
+			border: 1px solid #e3e3e3;
+		}
+
+		.varA-col {
+			flex: 1 1 300px;
+			padding: 50px 45px;
+		}
+
+		.varA-col--lead {
+			background: #303030;
+			color: #fff;
+		}
+
+		.varA-tier {
+			font-size: 12px;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin: 0 0 6px;
+			opacity: .55;
+		}
+
+		.varA-col--lead .varA-role {
+			font-size: 13px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			font-weight: 500;
+			margin: 0 0 32px;
+			opacity: .8;
+		}
+
+		.varA-col--hands .varA-role {
+			font-size: 13px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			font-weight: 500;
+			margin: 0 0 32px;
+			color: #999;
+		}
+
+		.varA-list { list-style: none; margin: 0; padding: 0; }
+
+		.varA-col--lead .varA-list li {
+			font-size: 26px;
+			font-weight: 300;
+			line-height: 1.5;
+			letter-spacing: .5px;
+		}
+
+		.varA-col--hands .varA-list li {
+			font-size: 17px;
+			font-weight: 300;
+			line-height: 1.9;
+			color: #555;
+		}
+
+		/* ============================================================
+		   VARIATION B — VERTICAL HIERARCHY
+		   LEADING on top in large type (primary mode), HANDS-ON below
+		   as a smaller supporting row of outlined pills.
+		   ============================================================ */
+		.varB { text-align: center; }
+
+		.varB-tier {
+			font-size: 12px;
+			letter-spacing: 6px;
+			text-transform: uppercase;
+			font-weight: 700;
+			color: #999;
+			margin: 0 0 26px;
+		}
+
+		.varB-lead {
+			max-width: 820px;
+			margin: 0 auto 60px;
+		}
+
+		.varB-lead-items {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 14px 28px;
+		}
+
+		.varB-lead-items span {
+			font-size: 30px;
+			font-weight: 300;
+			letter-spacing: .5px;
+			line-height: 1.3;
+		}
+
+		.varB-lead-items .sep {
+			font-size: 18px;
+			color: #cfcfcf;
+			font-weight: 300;
+		}
+
+		.varB-divider {
+			width: 40px;
+			height: 1px;
+			background: #d5d5d5;
+			margin: 0 auto 40px;
+		}
+
+		.varB-hands-items {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 12px;
+		}
+
+		.varB-pill {
+			border: 1px solid #cdcdcd;
+			border-radius: 40px;
+			padding: 8px 20px;
+			font-size: 13px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			font-weight: 500;
+			color: #555;
+		}
+
+		/* ============================================================
+		   VARIATION C — CHIPS / TIERED FILL
+		   Leading chips filled dark (primary), hands-on chips outlined
+		   (supporting). Grouped under left-aligned tier labels.
+		   ============================================================ */
+		.varC-group { margin-bottom: 44px; }
+		.varC-group:last-child { margin-bottom: 0; }
+
+		.varC-tier {
+			display: flex;
+			align-items: center;
+			gap: 18px;
+			margin: 0 0 22px;
+		}
+
+		.varC-tier h3 {
+			margin: 0;
+			font-size: 13px;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		.varC-tier .varC-line {
+			flex: 1;
+			height: 1px;
+			background: #e3e3e3;
+		}
+
+		.varC-tier .varC-note {
+			font-size: 11px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: #b0b0b0;
+			font-weight: 500;
+		}
+
+		.varC-chips {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.varC-chip {
+			padding: 12px 24px;
+			font-size: 15px;
+			letter-spacing: 1px;
+			font-weight: 500;
+		}
+
+		.varC-chip--filled {
+			background: #303030;
+			color: #fff;
+			font-size: 16px;
+		}
+
+		.varC-chip--outline {
+			border: 1px solid #cfcfcf;
+			color: #555;
+			font-weight: 300;
+		}
+
+		@media (max-width: 600px) {
+			.varB-lead-items span { font-size: 23px; }
+			.varA-col { padding: 38px 30px; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="preview-bar">Skills section — 3 variations · pick one</div>
+
+	<!-- ===================== VARIATION A ===================== -->
+	<p class="preview-label">Variation A — Two columns, leadership weighted (dark fill)</p>
+	<section class="skills-section">
+		<div class="section--title">
+			<h2><strong>WHAT</strong> I DO</h2>
+		</div>
+
+		<div class="varA-grid">
+			<div class="varA-col varA-col--lead">
+				<p class="varA-tier">Tier 1</p>
+				<p class="varA-role">Leading</p>
+				<ul class="varA-list">
+					<li>Engineering Leadership</li>
+					<li>Technical Strategy</li>
+					<li>Team Building</li>
+					<li>System Architecture</li>
+				</ul>
+			</div>
+			<div class="varA-col varA-col--hands">
+				<p class="varA-tier">Tier 2</p>
+				<p class="varA-role">Hands-on</p>
+				<ul class="varA-list">
+					<li>JavaScript / TypeScript</li>
+					<li>Node.js</li>
+					<li>React</li>
+					<li>Full-Stack</li>
+					<li>AI-Assisted Development</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===================== VARIATION B ===================== -->
+	<p class="preview-label">Variation B — Vertical hierarchy (leading large, hands-on as pills)</p>
+	<section class="skills-section">
+		<div class="section--title">
+			<h2><strong>WHAT</strong> I DO</h2>
+		</div>
+
+		<div class="varB">
+			<div class="varB-lead">
+				<p class="varB-tier">Leading</p>
+				<div class="varB-lead-items">
+					<span>Engineering Leadership</span>
+					<span class="sep">·</span>
+					<span>Technical Strategy</span>
+					<span class="sep">·</span>
+					<span>Team Building</span>
+					<span class="sep">·</span>
+					<span>System Architecture</span>
+				</div>
+			</div>
+
+			<div class="varB-divider"></div>
+
+			<p class="varB-tier">Hands-on</p>
+			<div class="varB-hands-items">
+				<span class="varB-pill">JavaScript / TypeScript</span>
+				<span class="varB-pill">Node.js</span>
+				<span class="varB-pill">React</span>
+				<span class="varB-pill">Full-Stack</span>
+				<span class="varB-pill">AI-Assisted Development</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===================== VARIATION C ===================== -->
+	<p class="preview-label">Variation C — Chips, tiered fill (leading filled, hands-on outlined)</p>
+	<section class="skills-section">
+		<div class="section--title">
+			<h2><strong>WHAT</strong> I DO</h2>
+		</div>
+
+		<div class="varC-group">
+			<div class="varC-tier">
+				<h3>Leading</h3>
+				<span class="varC-line"></span>
+				<span class="varC-note">Primary</span>
+			</div>
+			<div class="varC-chips">
+				<span class="varC-chip varC-chip--filled">Engineering Leadership</span>
+				<span class="varC-chip varC-chip--filled">Technical Strategy</span>
+				<span class="varC-chip varC-chip--filled">Team Building</span>
+				<span class="varC-chip varC-chip--filled">System Architecture</span>
+			</div>
+		</div>
+
+		<div class="varC-group">
+			<div class="varC-tier">
+				<h3>Hands-on</h3>
+				<span class="varC-line"></span>
+				<span class="varC-note">Supporting</span>
+			</div>
+			<div class="varC-chips">
+				<span class="varC-chip varC-chip--outline">JavaScript / TypeScript</span>
+				<span class="varC-chip varC-chip--outline">Node.js</span>
+				<span class="varC-chip varC-chip--outline">React</span>
+				<span class="varC-chip varC-chip--outline">Full-Stack</span>
+				<span class="varC-chip varC-chip--outline">AI-Assisted Development</span>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
