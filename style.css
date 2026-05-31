@@ -1217,6 +1217,29 @@ body.scrolled .header--navbar {
 		margin-left: auto;
 }
 
+/* Brand logo cards (e.g. wide SVG logos) get padding so they sit
+   centered within a card area comparable in height to the others. */
+.post--img--brand a {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		min-height: 150px;
+		padding: 30px 25px;
+		background-color: #fff;
+}
+
+.post--img--brand img {
+		width: auto;
+		max-width: 100%;
+		max-height: 70px;
+}
+
 .post-description {
 		background: #fff;
 		padding: 15px;
